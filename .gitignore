@@ -25,4 +25,5 @@ yarn-error.log
 /app/phpunit.xml
 /build/
 /bin/
+/.idea
 /composer.phar
