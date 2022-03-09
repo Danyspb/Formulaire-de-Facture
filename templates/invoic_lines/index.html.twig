@@ -1,0 +1,32 @@
+{% extends'base.html.twig' %}
+{% block head %}
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        Billing
+    {% endblock %}
+{% endblock %}
+{% block body %}
+<body>
+    <div class="container-fluid">
+        <h1 style="margin-bottom: 20px;margin-top: 20px;">Add the Invoic Lines</h1>
+        {{ form_start(form) }}
+        <div class="col-md-4">
+            <div class="form-label">{{ form_row(form.invoic,{'label':'Invoice ID '}) }}</div>
+            <div class="form-label">{{ form_row(form.description,{'label':'Product Description '}) }}</div>
+            <div class="form-label">{{ form_row(form.quantity,{'label':'Quantity of the Product '}) }}</div>
+            <div class="form-label">{{ form_row(form.amount,{'label':'Amont of the Product '}) }}</div>
+            <div class="form-label">{{ form_row(form.vat_amount,{'label':'VAT % '}) }}</div>
+        </div>
+        <button type="submit" class="btn btn-success" style="margin-bottom: 10px;">Save</button>
+
+    </div>
+
+    {{ form_end(form) }}
+</body>
+</html>
+{% endblock %}

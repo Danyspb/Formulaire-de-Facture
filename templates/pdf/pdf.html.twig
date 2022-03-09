@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}Billing{% endblock %}
+</head>
+{% endblock %}
+
+{% block body %}
+    <body>
+    <div class="facture">
+        <h1>Billing of Customer</h1>
+        <div class="infos">
+            <label>ID Bill : </label>{{ facture.invoic.invoiceNumber }} <br>
+            <label>Custumer ID : </label>{{ facture.invoic.customerID }} <br>
+            <label>Date : </label>{{ facture.invoic.invoiceDate | date('d/m/y') }}
+        </div>
+        <div class="donnes">
+            <label>Description : </label><br>
+            <text>{{ facture.description }}</text>
+            <br><br>
+            <label>Quantity : </label>{{ facture.quantity }}<br>
+            <label>Amout : </label>{{ facture.amount }}<br>
+            <label>VAT : </label>{{ facture.vatAmount }} %<br>
+            <label>ToTal VAT : </label>{{ facture.totalVat }}
+
+        </div>
+
+    </div>
+    <a href="{{ path('app_home') }}" class="btn btn-info">Home</a>
+    </body>
+</html>
+
+<style>
+    .facture{
+        margin-left: 400px;
+        padding-left: 15px;
+        background-color: #AAAAAA;
+        border-radius: 20px;
+        margin-right: 400px;
+        padding-bottom: 25px;
+    }
+    .facture h1{
+        color: darkslateblue;
+        padding-top: 15px;
+        margin-left: 110px;
+        font-family: "Times New Roman";
+    }
+
+    .infos label{
+        font-size: large;
+        font-family: Georgia;
+        color: darkblue;
+    }
+    .infos{
+        padding-bottom: 25px;
+        font-size: large;
+    }
+    .donnes label{
+        font-size: large;
+        font-family: Georgia;
+        color: darkblue;
+    }
+    .donnes text{
+        margin-left: 120px;
+    }
+    a{
+        margin-left: 800px;
+        margin-top: 20px;
+    }
+</style>
+{% endblock %}
